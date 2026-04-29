@@ -3,12 +3,14 @@
 import Link from "next/link";
 import { useState } from "react";
 
+const VPS_IP = "72.60.0.60"; // 🔁 Replace with your actual VPS IP
+
 const projects = [
   {
     id: "calendar",
     title: "Calendar Project",
     subtitle: "Team scheduling and event automation",
-    link: "8080",
+    link: `http://${VPS_IP}:8080`,
     role: "Planner",
     username: "admin",
     password: "admin",
@@ -22,7 +24,7 @@ const projects = [
     id: "purchase",
     title: "Purchase Project",
     subtitle: "Procurement workflows and orders hub",
-    link: "8070",
+    link: `http://${VPS_IP}:8070`,
     role: "Buyer",
     username: "admin",
     password: "admin",
@@ -37,7 +39,7 @@ const projects = [
     id: "glpi",
     title: "GLPI Project",
     subtitle: "IT service management and support desk",
-    link: ":8082",
+    link: `http://${VPS_IP}:8082`,
     role: "Support",
     username: "admin",
     password: "admin",
@@ -121,6 +123,8 @@ function ProjectCard({ project }: { project: Project }) {
       <div className="relative z-10 mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
         <Link
           href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex min-w-[160px] items-center justify-center rounded-3xl bg-red-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-red-400"
         >
           Open Project
@@ -150,8 +154,6 @@ export default function Home() {
       <div className="pointer-events-none absolute right-0 top-40 h-96 w-96 rounded-full bg-[radial-gradient(circle,_rgba(56,189,248,0.14),_transparent_60%)] blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-
-
         <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
