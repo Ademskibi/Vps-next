@@ -8,8 +8,12 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard",
-  description: "Modern SaaS-style project dashboard",
+  title: "Techmind VPS Dashboard",
+  icons: {
+    icon: "/favicon-v2.png",
+    shortcut: "/favicon-v2.png",
+    apple: "/favicon-v2.png",
+  },
 };
 
 export default function RootLayout({
