@@ -24,7 +24,12 @@ const projects = [
     role: "Buyer",
     accounts: [
       { label: "Admin", username: "admin", password: "admin" },
-      { label: "test", username: "UserIt", password: "userit" },
+      { label: "userIT ", username: "userIT ", password: "12345678" },
+      { label: "userHR  ", username: "userHR  ", password: "12345678" },
+      { label: "managerIT", username: "managerIT", password: "12345678" },
+      { label: "managerHR ", username: "managerHR", password: "12345678" },
+      { label: "supervisor ", username: "supervisor", password: "supervisor" },
+      { label: "cordinator  ", username: "cordinator ", password: "cordinator " },
     ],
   },
   {
@@ -169,18 +174,6 @@ function ProjectCard({ project }: { project: Project }) {
                 {account.label}
               </h3>
 
-              <button
-                type="button"
-                onClick={() =>
-                  handleCopy(
-                    `${account.label} Credentials`,
-                    `${account.username}:${account.password}`
-                  )
-                }
-                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-200 transition hover:bg-white/10"
-              >
-                Copy All
-              </button>
             </div>
 
             <div className="space-y-3">
